@@ -11,7 +11,7 @@
 
 <meta name="author" content="Markus Dumke" />
 
-<meta name="date" content="2018-01-03" />
+<meta name="date" content="2019-03-20" />
 
 <title>Agents</title>
 
@@ -71,9 +71,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type="text/css">
 .main-container {
@@ -92,25 +90,98 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
 
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
 });
 </script>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -120,8 +191,8 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Agents</h1>
-<h4 class="author"><em>Markus Dumke</em></h4>
-<h4 class="date"><em>2018-01-03</em></h4>
+<h4 class="author">Markus Dumke</h4>
+<h4 class="date">2019-03-20</h4>
 
 </div>
 
@@ -139,29 +210,29 @@ library(reinforcelearn)</code></pre>
 agent = makeAgent(policy = &quot;softmax&quot;, val.fun = &quot;table&quot;, algorithm = &quot;qlearning&quot;)</code></pre>
 <p>Then you can run the agent in the environment by calling <code>interact</code> for a specified number of steps or episodes.</p>
 <pre class="r"><code>interact(env, agent, n.episodes = 5L)
-#&gt; Episode 1 finished after 1 steps with a return of -1
-#&gt; Episode 2 finished after 25 steps with a return of -25
-#&gt; Episode 3 finished after 3 steps with a return of -3
-#&gt; Episode 4 finished after 15 steps with a return of -15
-#&gt; Episode 5 finished after 5 steps with a return of -5
+#&gt; Episode 1 finished after 37 steps with a return of -37
+#&gt; Episode 2 finished after 37 steps with a return of -37
+#&gt; Episode 3 finished after 1 steps with a return of -1
+#&gt; Episode 4 finished after 13 steps with a return of -13
+#&gt; Episode 5 finished after 20 steps with a return of -20
 #&gt; $returns
-#&gt; [1]  -1 -25  -3 -15  -5
+#&gt; [1] -37 -37  -1 -13 -20
 #&gt; 
 #&gt; $steps
-#&gt; [1]  1 25  3 15  5</code></pre>
+#&gt; [1] 37 37  1 13 20</code></pre>
 <p>Note that <code>interact</code> returns a list with the number of steps and returns per episode. Furthermore it will change the environment and agent object. So the environment’s state or the agent’s value function weights will have most likely changed after the interaction.</p>
 <p>Although you can directly access the agent object, this is not recommended as this will be very likely to change in the next package versions. Instead use one of the accessor functions to e.g. get the weights of the action value function.</p>
 <pre class="r"><code>getValueFunction(agent)
-#&gt;           [,1]    [,2]    [,3]    [,4]
-#&gt;  [1,]  0.00000  0.0000  0.0000  0.0000
-#&gt;  [2,] -0.40951 -0.3081 -0.3439  0.0000
-#&gt;  [3,] -0.40951 -0.3900 -0.3710 -0.2000
-#&gt;  [4,]  0.00000 -0.1000  0.0000  0.0000
-#&gt;  [5,]  0.00000 -0.2900 -0.1900  0.0000
-#&gt;  [6,] -0.27100 -0.1000 -0.2900 -0.1900
-#&gt;  [7,]  0.00000  0.0000  0.0000  0.0000
-#&gt;  [8,]  0.00000  0.0000  0.0000  0.0000
-#&gt;  [9,]  0.00000 -0.1000 -0.2000 -0.3439</code></pre>
+#&gt;           [,1]      [,2]       [,3]       [,4]
+#&gt;  [1,]  0.00000  0.000000  0.0000000  0.0000000
+#&gt;  [2,] -0.19000 -0.307100 -0.3539000 -0.2810000
+#&gt;  [3,] -0.34390 -0.555851 -0.8667593 -0.5407031
+#&gt;  [4,] -0.10000 -0.119000 -0.2710000 -0.3439000
+#&gt;  [5,] -0.19000 -0.200000 -0.3539000 -0.2710000
+#&gt;  [6,] -0.36290 -0.419510 -0.5740031 -0.1000000
+#&gt;  [7,] -0.20000 -0.281000 -0.4095100 -0.3710000
+#&gt;  [8,] -0.37829 -0.190000 -0.3071000 -0.2000000
+#&gt;  [9,] -0.10000 -0.190000 -0.2000000  0.0000000</code></pre>
 <div id="policies" class="section level2">
 <h2>Policies</h2>
 <p>A policy is the agent’s behavior function. We can define the policy with <code>makePolicy</code>.</p>
@@ -265,12 +336,12 @@ interact(env, agent, n.steps = 3L, visualize = TRUE)
 #&gt;  - -
 #&gt; 
 #&gt;  - - 
-#&gt;  o - 
-#&gt;  - -
+#&gt;  - - 
+#&gt;  o -
 #&gt; 
 #&gt;  - - 
-#&gt;  - o 
-#&gt;  - -
+#&gt;  - - 
+#&gt;  o -
 #&gt; 
 #&gt; $returns
 #&gt; numeric(0)
@@ -295,12 +366,12 @@ for (i in 1:3L) {
 #&gt;  - - - - 
 #&gt;  - - - - 
 #&gt;  - - - - 
-#&gt;  - - o -
+#&gt;  - - - o
 #&gt; 
 #&gt;  - - - - 
 #&gt;  - - - - 
-#&gt;  - - o - 
-#&gt;  - - - -
+#&gt;  - - - - 
+#&gt;  - - - o
 #&gt; </code></pre>
 <div id="experience-replay" class="section level3">
 <h3>Experience replay</h3>
@@ -319,14 +390,14 @@ agent = makeAgent(&quot;random&quot;, replay.memory = memory)
 
 interact(env, agent, n.steps = 2L, visualize = TRUE)
 #&gt;  - - - - 
-#&gt;  - - o - 
 #&gt;  - - - - 
-#&gt;  - - - -
+#&gt;  - - - - 
+#&gt;  - - - o
 #&gt; 
 #&gt;  - - - - 
 #&gt;  - - - - 
-#&gt;  - - o - 
-#&gt;  - - - -
+#&gt;  - - - - 
+#&gt;  - - - o
 #&gt; 
 #&gt; $returns
 #&gt; numeric(0)
@@ -337,30 +408,30 @@ interact(env, agent, n.steps = 2L, visualize = TRUE)
 getReplayMemory(agent)
 #&gt; [[1]]
 #&gt; [[1]]$state
-#&gt; [1] 10
+#&gt; [1] 15
 #&gt; 
 #&gt; [[1]]$action
-#&gt; [1] 2
+#&gt; [1] 3
 #&gt; 
 #&gt; [[1]]$reward
 #&gt; [1] -1
 #&gt; 
 #&gt; [[1]]$next.state
-#&gt; [1] 6
+#&gt; [1] 15
 #&gt; 
 #&gt; 
 #&gt; [[2]]
 #&gt; [[2]]$state
-#&gt; [1] 6
+#&gt; [1] 15
 #&gt; 
 #&gt; [[2]]$action
-#&gt; [1] 3
+#&gt; [1] 1
 #&gt; 
 #&gt; [[2]]$reward
 #&gt; [1] -1
 #&gt; 
 #&gt; [[2]]$next.state
-#&gt; [1] 10</code></pre>
+#&gt; [1] 15</code></pre>
 <p>Here is an example training with experience replay, where the value function is updated only every 21 steps.</p>
 <pre class="r"><code>env = makeEnvironment(&quot;gridworld&quot;, shape = c(4, 4), goal.states = c(0, 15))
 
@@ -375,11 +446,11 @@ for (i in 1:100) {
 }
 action.vals = getValueFunction(agent)
 matrix(getStateValues(action.vals), ncol = 4L)
-#&gt;            [,1]      [,2]      [,3]      [,4]
-#&gt; [1,]   0.000000 -3.012074 -4.966259 -7.397651
-#&gt; [2,]  -2.545300 -5.650029 -7.306089 -4.991932
-#&gt; [3,]  -6.271404 -6.434747 -6.101606 -3.336008
-#&gt; [4,] -12.746046 -7.714610 -3.327779  0.000000</code></pre>
+#&gt;           [,1]       [,2]       [,3]       [,4]
+#&gt; [1,]  0.000000  -3.136912  -7.066653 -11.904707
+#&gt; [2,] -1.640836  -7.472061 -11.007529  -5.437852
+#&gt; [3,] -4.561075 -11.059960  -5.618530  -2.387193
+#&gt; [4,] -8.112700  -7.369234  -2.874774   0.000000</code></pre>
 </div>
 </div>
 

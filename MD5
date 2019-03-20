@@ -1,7 +1,7 @@
-910eecf18ce82559b050ae5c2b446b51 *DESCRIPTION
+69d2af16d44dea8d21e26b00b14c8114 *DESCRIPTION
 d2d65fee3fc259e70bcf94de331a3e07 *LICENSE
 b392fff9f63c77e2a32c5a54f8f4b27b *NAMESPACE
-e7b9749cba62b61ff22998faa4bfe89f *NEWS.md
+7d9022c51dcee51922944787736bfd83 *NEWS.md
 ed25b308cbb45c6d35f95e49948eee59 *R/accessor_functions.R
 92bad47aad146372e16aedcbc44cf3df *R/agent.R
 8e90b8ab0ec97fec217a6c82707e8390 *R/algorithm.R
@@ -18,13 +18,13 @@ d9567a5645552669e7eb6c2392939a64 *R/policy.R
 bfb383ab17077573ee8110780a7096b3 *R/tiles.R
 e3c2c6b771ad1698da917989ffbe07a2 *R/valuefunction.R
 75d90a69539a7141bbbe68781cfef809 *README.md
-54657f1e15c36f80af060dc2bd53c8b2 *build/vignette.rds
+f1d08a5c8e6ebbe452c60100c5033ed8 *build/vignette.rds
 9a98c2633e23e8add9bf1ed9d42e005a *inst/doc/agents.R
 44e41c832116a47ffb24c02177dc883e *inst/doc/agents.Rmd
-8f57ce53d6fce92f59b86ea26abdce58 *inst/doc/agents.html
+805cea1674ceccaedd01a26ef0b6d326 *inst/doc/agents.html
 28e800bd2d019ad98e5ac50a678e68b4 *inst/doc/environments.R
 edbcf82e5d019d429a1731d0156a3c45 *inst/doc/environments.Rmd
-2c414d6caaacbf703c87491d1333b894 *inst/doc/environments.html
+65cf2fba45af71a66bcee0439e7a92f8 *inst/doc/environments.html
 ea0807c5e24378a0e566dc56bd9e2b50 *man/CliffWalking.Rd
 6516912f8e1ffda48a9c3602a996c1fc *man/Eligibility.Rd
 d21ca6f12f2d7fc00b259d0e65f574d5 *man/Environment.Rd
@@ -32,7 +32,7 @@ d21ca6f12f2d7fc00b259d0e65f574d5 *man/Environment.Rd
 be443dc318a54ed5d76ab5a6cb9c7b1e *man/Gridworld.Rd
 ba1067fa42706c35d16f1604c8e5c40b *man/GymEnvironment.Rd
 3083034669d247498687f8d8de85183c *man/MdpEnvironment.Rd
-5308a9d0de0abf84d9402095ab3b2e18 *man/MountainCar.Rd
+be9f35aabea796b0b6330405c8e63979 *man/MountainCar.Rd
 d77541995b67a49d87c7b8afca54459b *man/QLearning.Rd
 1a930a4b47077284369b649a07da485e *man/RandomPolicy.Rd
 1edf1a061858a70b9e0960b94cfe9457 *man/SoftmaxPolicy.Rd
@@ -45,7 +45,7 @@ effff06fa2970191a4040ba368e425dc *man/getReplayMemory.Rd
 18d69454642f2b88718162d99f3c3484 *man/getStateValues.Rd
 2dfe338e2ef8f1d987fc2de656895c2a *man/getValueFunction.Rd
 7b75dd6baa81d20387078268a74d22c6 *man/interact.Rd
-f7f40fd299eede181cd7d4b7f28aad5f *man/makeAgent.Rd
+c6b547e0d655df9b07590653c3af8ea4 *man/makeAgent.Rd
 f66ad667fee56f13818f464effcbfd9d *man/makeAlgorithm.Rd
 e51cfc28df355f75753b978fc75946b3 *man/makeEnvironment.Rd
 4d1c1356d9a4f3507736d403a6fee39c *man/makePolicy.Rd
@@ -55,7 +55,7 @@ f19b3e1cf00fc9617b0db1db21278d81 *man/nHot.Rd
 91feba5cb488f125dbc8372a8902a675 *man/reinforcelearn.Rd
 43290c284d4370c5eb31e9446ae2fbb9 *man/tilecoding.Rd
 845813ecf49e1a37a433cddf0b62d3f6 *tests/testthat.R
-11f74b34ec1ff7e7db2ab84767ed2059 *tests/testthat/test_accessor_functions.R
+ba8f7abd50cee58f229fe1c11cf6fad2 *tests/testthat/test_accessor_functions.R
 30ed314b06237262664adb34d993d0f3 *tests/testthat/test_agent.R
 86f8dd182001bd7c9d3b8075d0947fd6 *tests/testthat/test_environment.R
 fac074070a1f550c92bc458cbf2f77c5 *tests/testthat/test_policy.R
@@ -63,4 +63,4 @@ fac074070a1f550c92bc458cbf2f77c5 *tests/testthat/test_policy.R
 edbcf82e5d019d429a1731d0156a3c45 *vignettes/environments.Rmd
 601344a01288c4c13b93db9f133517d6 *vignettes/gridworld.JPG
 6c922358cf7681242cc45a2cef885eb5 *vignettes/mountaincar.JPG
-990047f57d0f99c35bf738f0b78fae33 *vignettes/references.bib
+80505b0d318784f3b539bc7728857bc8 *vignettes/references.bib
