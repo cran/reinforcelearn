@@ -1,7 +1,7 @@
 Package: reinforcelearn
 Type: Package
 Title: Reinforcement Learning
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: person("Markus", "Dumke", email = {"markusdumke@gmail.com"}, role = c("aut", "cre"))
 Description: Implements reinforcement learning environments and algorithms as described in Sutton & Barto (1998, ISBN:0262193981).
     The Q-Learning algorithm can be used with function approximation, 
@@ -21,8 +21,8 @@ Imports: checkmate (>= 1.8.4), R6 (>= 2.2.2), nnet (>= 7.3-12), purrr
 Suggests: reticulate, keras, knitr, rmarkdown, testthat, covr, lintr
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2019-03-20 18:26:27 UTC; Markus
+Packaged: 2019-04-08 19:08:56 UTC; Markus
 Author: Markus Dumke [aut, cre]
 Maintainer: Markus Dumke <markusdumke@gmail.com>
 Repository: CRAN
-Date/Publication: 2019-03-20 21:10:03 UTC
+Date/Publication: 2019-04-09 11:50:08 UTC
